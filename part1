@@ -1,0 +1,20 @@
+root@user:~# vim /etc/default/grub
+root@user:~# cat /etc/default/grub | grep GRUB_TIMEOUT
+#GRUB_TIMEOUT_STYLE=hidden
+GRUB_TIMEOUT=10
+root@user:~# ip -br a | grep 192.168.43.33
+enp0s3           UP             192.168.43.33/24 2a00:1fa0:420f:3748:a00:27ff:fe91:4303/64 fe80::a00:27ff:fe91:4303/64
+root@user:~# update-grub
+Sourcing file `/etc/default/grub'
+Sourcing file `/etc/default/grub.d/init-select.cfg'
+Generating grub configuration file ...
+/usr/sbin/grub-probe: warning: Couldn't find physical volume `pv3'. Some modules may be missing from core image..
+/usr/sbin/grub-probe: warning: Couldn't find physical volume `pv2'. Some modules may be missing from core image..
+/usr/sbin/grub-probe: warning: Couldn't find physical volume `pv1'. Some modules may be missing from core image..
+Found linux image: /boot/vmlinuz-5.15.0-170-generic
+Found initrd image: /boot/initrd.img-5.15.0-170-generic
+Warning: os-prober will not be executed to detect other bootable partitions.
+Systems on them will not be added to the GRUB boot configuration.
+Check GRUB_DISABLE_OS_PROBER documentation entry.
+done
+root@user:~# reboot
